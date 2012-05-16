@@ -2,6 +2,7 @@
 
 
 客户端引用LESS很简单，
+
 1.在当前目录下载<a href="less-1.3.0.min.js">less.js</a>
 
 2.创建一个文件来放你的样式，比如style.less
@@ -14,3 +15,7 @@
 </pre>
 
 注意:<code>style.less</code>一定要放在<code>less.js</code>前面!
+
+具体语法参考 <a href="http://www.lesscss.net/" target="_blank">http://www.lesscss.net/</a>
+
+LESS的git项目地址：<a href="https://github.com/cloudhead/less.js">LESS</a>

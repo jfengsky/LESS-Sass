@@ -1,4 +1,4 @@
-/* 基本用法 */
+/* 变量 */
 @color:#f60;
 @border:1px sold @color;
 .text{
@@ -6,4 +6,123 @@
     border-top:@border;
 }
 
-/*  */
+/* --------------------------------------- */
+/* 混合  */
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+#header {
+  .rounded-corners;
+}
+//生成
+#header {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+#footer {
+  .rounded-corners(10px);
+}
+//生成
+#footer {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+/* --------------------------------------- */
+/* 嵌套 注意伪类写法 */
+#header {
+h1 {
+    font-size: 26px;
+    font-weight: bold;
+    }
+    p { font-size: 12px;
+        a { text-decoration: none;
+            &:hover { border-width: 1px }
+        }
+    }
+}
+//生成
+#header h1 {
+    font-size: 26px;
+    font-weight: bold;
+}
+#header p {
+    font-size: 12px;
+}
+#header p a {
+    text-decoration: none;
+}
+#header p a:hover {
+    border-width: 1px;
+}
+
+/* --------------------------------------- */
+/* 函数 & 运算 */
+
+//生成一个渐变按钮
+@blue: #369;
+.submit {
+	padding: 5px 10px;
+	border: 1px solid @blue;
+	background: -moz-linear-gradient(top, lighten(@blue, 10%), @blue 100%); /*Moz*/
+	background: -webkit-gradient(linear, center top, center bottom, from(lighten(@blue, 10%)), color-stop(100%, @blue)); /*Webkit*/
+	background: -o-linear-gradient(top, lighten(@blue, 10%) 0%, @blue 100%); /*Opera*/
+	background: -ms-linear-gradient(top, lighten(@blue, 10%) 0%, @blue 100%); /*IE 10+*/
+	background: linear-gradient(top, lighten(@blue, 10%) 0%, @blue 100%); /*W3C*/
+	color: #fff;
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+}
+
+/*
+lighten函数很明显就是用百分比值来减轻颜色，在这个例子中，
+它将减轻这个基础的蓝色的10%。这种方法可以让我们变化的元素或者其它任何元素的颜色值——只是简单的改变基础颜色而已。
+这对于主题(模板)来说非常有用。而且，如果你使用参数功能，像上面提到的，你还可以更简单的应用到一些浏览器私有前缀的声明中，
+比如：.linear-gradient(lighten(@blue), @blue, 100%);。
+*/
+
+/* --------------------------------------- */
+/* 名字空间(Namespaces) */
+#demo{
+    .nav{
+        border-top:1px solid #ccc;
+    }
+}
+//引用
+ul{
+    #demo .nav;
+}
+
+/* --------------------------------------- */
+/* 作用域 */
+@color: #00c; /* 蓝色 */
+#header {
+	@color: #c00; /* red */
+	border: 1px solid @color; /* 红色边框 */
+}
+#footer {
+	border: 1px solid @color; /* 蓝色边框 */
+}
+
+/* --------------------------------------- */
+/* 字符串插入 */
+@base_url : 'http://www.taobao.com';
+.test{
+    background:url("@{base_url}/images/background.png");
+}
+
+/* --------------------------------------- */
+/* 在样式表中使用Javascript——相当精彩 */
+@string: `'howdy'.toUpperCase()`; /* @string 变成 'HOWDY' */
+
+/* 你也可以使用前面提到的插值： */
+@string: 'howdy';
+@var: ~`'@{string}'.topUpperCase()`; /* 变为 'HOWDY' */
+
+/* 获取文档的信息 */
+@height = `document.body.clientHeight`;
