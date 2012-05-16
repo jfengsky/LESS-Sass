@@ -6,11 +6,11 @@
 
 2.创建一个文件来放你的样式，比如style.less
 
-3.添加以下代码到你的HTML的<head>中:
+3.添加以下代码到你的HTML的<code>&lt;head></code>中:
 
 <pre>
 &lt;link rel="stylesheet/less" type="text/css" href="styles.less">
 &lt;script src="less.js" type="text/javascript">&lt;/script>
 </pre>
 
-注意:'style.less一定要放在less.js前面!'
+注意:<code>style.less</code>一定要放在<code>less.js</code>前面!
