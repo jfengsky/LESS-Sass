@@ -1,8 +1,30 @@
 #Sass 自动编译配置使用
 Sass官网：[Sass](http://sass-lang.com/)
+###安装
+<pre>
+gem install sass
+</pre>
+###使用
+<pre>
+sass test.scss
+sass test.scss test.css
+</pre>
+###编译风格
+<pre>
+nested：嵌套缩进的css代码，它是默认值。
+expanded：没有缩进的、扩展的css代码。
+compact：简洁格式的css代码。
+compressed：压缩后的css代码。
+</pre>
+生产环境当中，一般使用最后一个选项。
+<pre>
+sass --style compressed test.sass test.css
+</pre>
 
 
-##安装
+
+
+##compass安装
 需要ruby环境
 在终端输入
 <pre>
@@ -10,7 +32,7 @@ gem install compass
 </pre>
 该命令会自动下载和安装 COMPASS 及其依赖模块(包括 SASS）。
 
-##使用
+##compass使用
 创建一个compass项目
 在终端输入
 <pre>
@@ -21,10 +43,10 @@ compass create _programName
 
 在 config.rb 中你可以修改 SASS 和 CSS 的目录及其它一些基础设置。
 
-##实时编译Sass文件
+##compass实时编译Sass文件
 终端输入
 <pre>
-comprass watch
+compass watch
 </pre>
 COMPASS 将会实时监控 SASS 目录的文件变化，只要你一保存文件，立即将相应文件编译为 CSS 文件。
 
