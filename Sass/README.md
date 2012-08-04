@@ -1,6 +1,8 @@
-##Sass配置使用
+#Sass 自动编译配置使用
+Sass官网：[Sass](http://sass-lang.com/)
 
-###安装
+
+##安装
 需要ruby环境
 在终端输入
 <pre>
@@ -8,7 +10,7 @@ gem install compass
 </pre>
 该命令会自动下载和安装 COMPASS 及其依赖模块(包括 SASS）。
 
-###使用
+##使用
 创建一个compass项目
 在终端输入
 <pre>
@@ -19,7 +21,7 @@ compass create _programName
 
 在 config.rb 中你可以修改 SASS 和 CSS 的目录及其它一些基础设置。
 
-###实时编译Sass文件
+##实时编译Sass文件
 终端输入
 <pre>
 comprass watch
