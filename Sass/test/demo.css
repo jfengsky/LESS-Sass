@@ -1,0 +1,39 @@
+.demo, .test, .test .ext:hover, .abc, .def:hover {
+  color: #ccc;
+  height: 200px; }
+
+.test {
+  width: 100px; }
+  .test .ext:hover {
+    font-weight: bold; }
+
+.abc, .def:hover {
+  border: 1px solid #ccc; }
+
+.def:hover {
+  font-size: 18px; }
+
+.sld .demo, .sld .test, .sld .test .ext:hover, .test .sld .ext:hover, .sld .abc, .sld .def:hover {
+  float: right; }
+
+/**
+ * placeholder
+ */
+.example {
+  width: 100%;
+  height: 300px;
+  display: block; }
+
+.demo3:hover {
+  width: 100%;
+  height: 300px;
+  display: block; }
+
+.demo2 {
+  border: 1px solid #fff; }
+
+.demo3:hover {
+  float: left; }
+
+.demo4 .example {
+  background: #ccc; }

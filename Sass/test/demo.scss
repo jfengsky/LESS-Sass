@@ -1,0 +1,63 @@
+.demo{
+  color:#ccc;
+  height:200px;
+}
+
+.test{
+  width:100px;
+  @extend .demo;
+  .ext{
+    &:hover{
+      font-weight:bold;
+      @extend .demo;
+    }
+  }
+}
+
+.abc{
+  border:1px solid #ccc;
+  @extend .demo;
+}
+
+.def{
+  &:hover{
+    font-size:18px;
+    @extend .abc;
+  }
+}
+
+.sld .demo{
+  float:right;
+}
+
+
+/**
+ * placeholder
+ */
+.example{
+  width:100%;
+  height:300px;
+  display:block;
+}
+%example{
+  width:100%;
+  height:300px;
+  display:block;
+}
+
+.demo2{
+  border:1px solid #fff;
+  // @extend %example;
+}
+
+.demo3{
+  &:hover{
+    // @extend %example;
+    float:left;
+    @extend %example;
+  }
+}
+
+.demo4 .example{
+  background:#ccc;
+}
