@@ -1,0 +1,22 @@
+@charset "UTF-8"
+
+$gap: 4px !default
+$background-color: #f36 !default
+$color: lighten($background-color,50%) !default
+
+ul
+    list-style: none outside none
+    margin: 0
+    padding: 0
+
+    li
+        width: $gap * 20
+        height: $gap * 10
+        float: left
+        margin: $gap * 2
+        padding: 0
+        background: $background-color
+
+        &:hover
+            background: darken($background-color, 10%)
+        
